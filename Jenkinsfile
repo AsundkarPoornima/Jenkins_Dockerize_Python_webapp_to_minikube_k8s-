@@ -4,7 +4,7 @@ pipeline {
     }
     environment{
          DOCKERHUB_CREDENTIALS = credentials('DockerHub')
-         DOCKER_IMAGE_NAME = "poornimaasundkar//mywebapp2"
+         DOCKER_IMAGE_NAME = "poornimaasundkar/mywebapp2"
     }
      stages {
         /*stage('Cleanup') {
