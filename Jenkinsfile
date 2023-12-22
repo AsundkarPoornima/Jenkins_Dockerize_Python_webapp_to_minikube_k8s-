@@ -42,7 +42,7 @@ pipeline {
         stage('Push to k8s') {
             steps {
                    sh 'minikube start '                                 
-                   kubectl apply -f .
+                   sh 'kubectl apply -f .'
             }
         }
       /*  stage('Compose up') {
