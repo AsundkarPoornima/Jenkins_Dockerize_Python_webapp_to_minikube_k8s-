@@ -6,8 +6,8 @@ pipeline {
          DOCKERHUB_CREDENTIALS = credentials('DockerHub')
          DOCKER_IMAGE_NAME = "poornimaasundkar"
     }
-     /*stages {
-        stage('Cleanup') {
+     stages {
+        /*stage('Cleanup') {
             steps {
                 sh 'rm -rf /var/lib/jenkins/workspace/project-1.0-pipeline@2'
               /*  sh 'docker stop mywebapp1_container || true'
