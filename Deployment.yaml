@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebapp1
+  name: mywebapp2
   labels:
-    app: mywebapp1
+    app: mywebapp2
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: mywebapp1
+      app: mywebapp2
   template:
     metadata:
       labels:
-        app: mywebapp1
+        app: mywebapp2
     spec:
       containers:
-      - name: mywebapp1
-        image: poornimaasundkar/python_mywebapp1
+      - name: mywebapp2
+        image: poornimaasundkar/python_mywebapp2
         ports:
         - containerPort: 5000
