@@ -44,7 +44,7 @@ pipeline {
                    sh 'minikube start '                                 
                    kubectl apply -f .
             }
-        }
+      }
       /*  stage('Compose up') {
             steps {
                  sh 'cat docker-compose.yml'
