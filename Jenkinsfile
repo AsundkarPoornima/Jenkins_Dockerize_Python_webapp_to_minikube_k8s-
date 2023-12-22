@@ -42,9 +42,9 @@ pipeline {
       stage('Push to k8s') {
             steps {
                  sh 'minikube start '                                 
-                  //kubectl apply -f .
-                 sh 'kubectl apply -f deployment.yaml'
-                 sh 'kubectl apply -f service.yaml'
+                   kubectl apply -f .
+                  /*sh 'kubectl apply -f deployment.yaml'
+                 sh 'kubectl apply -f service.yaml'*/
             }
         }
       /*  stage('Compose up') {
