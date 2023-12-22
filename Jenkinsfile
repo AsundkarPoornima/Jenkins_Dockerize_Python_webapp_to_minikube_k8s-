@@ -4,7 +4,7 @@ pipeline {
     }
     environment{
          DOCKERHUB_CREDENTIALS = credentials('DockerHub')
-         DOCKER_IMAGE_NAME = "poornimaasundkar"
+         DOCKER_IMAGE_NAME = "poornimaasundkar//mywebapp2"
     }
      stages {
         /*stage('Cleanup') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh "docker build -t poornimaasundkar/mywebapp1:${BUILD_NUMBER} ."
+                sh "docker build -t $DOCKER_IMAGE_NAME:${BUILD_NUMBER} ."
             }
         }
         stage('Login DockerHub') {
@@ -37,7 +37,7 @@ pipeline {
         }   
         stage('Push Image') {
             steps {
-                sh "docker push $DOCKER_IMAGE_NAME/mywebapp1:${BUILD_NUMBER}"
+                sh "docker push $DOCKER_IMAGE_NAME:${BUILD_NUMBER}"
             }
         }
       stage('Push to k8s') {
@@ -56,7 +56,7 @@ pipeline {
         }
      stage('Run Container') {
             steps {
-                sh "docker run -d -p 5001:5000 --name mywebapp1_container $DOCKER_IMAGE_NAME/mywebapp1:${BUILD_NUMBER}"
+                sh "docker run -d -p 5001:5000 --name mywebapp1_container $DOCKER_IMAGE_NAME:${BUILD_NUMBER}"
             }
         }*/
         stage('Access Webapp') {
