@@ -12,7 +12,7 @@ pipeline {
                 sh 'rm -rf /var/lib/jenkins/workspace/project-1.0-pipeline@2'
               /*  sh 'docker stop mywebapp1_container || true'
       		    sh 'docker rm mywebapp1_container || true'
-                sh 'docker-compose --env-file .env down' */
+                sh 'docker-compose --env-file .env down' 
             }
         }*/
         stage('Clone Code') {
@@ -43,7 +43,7 @@ pipeline {
             steps {
                  sh 'minikube start '                                 
                    kubectl apply -f .
-                  /*sh 'kubectl apply -f deployment.yaml'
+                  /* sh 'kubectl apply -f deployment.yaml'
                  sh 'kubectl apply -f service.yaml'*/
             }
         }
