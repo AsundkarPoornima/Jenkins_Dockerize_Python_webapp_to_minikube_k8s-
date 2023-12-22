@@ -6,18 +6,17 @@ pipeline {
          DOCKERHUB_CREDENTIALS = credentials('DockerHub')
          DOCKER_IMAGE_NAME = "poornimaasundkar"
     }
-    stages {
+     /*stages {
         stage('Cleanup') {
             steps {
                 sh 'rm -rf /var/lib/jenkins/workspace/project-1.0-pipeline@2'
               /*  sh 'docker stop mywebapp1_container || true'
-      		    sh 'docker rm mywebapp1_container || true'*/
-                sh 'docker-compose --env-file .env down'
+      		    sh 'docker rm mywebapp1_container || true'
+                sh 'docker-compose --env-file .env down' */
             }
-        }
+        }*/
         stage('Clone Code') {
             steps {
-                /*git branch: 'main', url: 'https://github.com/AsundkarPoornima/Containerize_PythonWebApp.git'*/
                 checkout scm     
             }
         }
