@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh "docker build -t poornimaasundka/mywebapp1:${BUILD_NUMBER} ."
+                sh "docker build -t poornimaasundkar/mywebapp1:${BUILD_NUMBER} ."
             }
         }
         stage('Login DockerHub') {
