@@ -39,12 +39,12 @@ pipeline {
                 sh "docker push $DOCKER_IMAGE_NAME:${BUILD_NUMBER}"
             }
         }
-      stage('Push to k8s') {
+        stage('Push to k8s') {
             steps {
                    sh 'minikube start '                                 
                    kubectl apply -f .
             }
-      }
+        }
       /*  stage('Compose up') {
             steps {
                  sh 'cat docker-compose.yml'
